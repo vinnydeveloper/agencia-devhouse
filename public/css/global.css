@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
@@ -9,6 +14,13 @@ h1 {
 
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  background: gray;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
 }
 .icon-social {
   width: 80px;
