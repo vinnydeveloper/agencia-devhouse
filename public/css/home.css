@@ -48,3 +48,28 @@ header {
   padding: 10px;
   border-color: none;
 }
+
+.texto-padrao {
+  color: black;
+}
+
+#menu-mobile {
+  display: none;
+}
+
+@media (max-width: 465px) {
+  .menu {
+    display: none;
+  }
+
+  .atendimento {
+    display: none;
+  }
+
+  #menu-mobile {
+    display: block;
+  }
+  header {
+    justify-content: space-between;
+  }
+}
