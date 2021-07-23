@@ -1,10 +1,11 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Roboto";
   font-size: 20px;
 }
 
@@ -24,4 +25,50 @@ ul {
 }
 .icon-social {
   width: 80px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+
+  align-items: center;
+}
+
+.menu a {
+  color: #3f3f6c;
+  margin-left: 50px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.atendimento button {
+  background-color: #3751ff;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+#menu-mobile {
+  display: none;
+}
+
+@media (max-width: 465px) {
+  .menu {
+    display: none;
+  }
+
+  .atendimento {
+    display: none;
+  }
+
+  #menu-mobile {
+    display: block;
+  }
+  header {
+    justify-content: space-between;
+  }
 }
