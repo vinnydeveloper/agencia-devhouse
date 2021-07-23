@@ -1,0 +1,2 @@
+Para instalar o projeto faça o comando
+npm install
