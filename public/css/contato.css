@@ -24,6 +24,7 @@ section#contato h1 {
   font-size: 22px;
   margin: 10px 0;
   padding: 5px;
+  transition: border 0.75s;
 }
 
 .button-padrao {
@@ -32,4 +33,15 @@ section#contato h1 {
   border-radius: 4px;
   padding: 20px;
   border: none;
+  transition: padding 1s;
+}
+
+.button-padrao[type="submit"]:hover {
+  background-color: green;
+  padding: 40px;
+}
+
+.input-padrao:focus {
+  border: 3px solid green;
+  outline: 0;
 }
