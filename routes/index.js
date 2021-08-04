@@ -1,10 +1,12 @@
 const express = require("express");
 const path = require("path");
-
 const routes = express.Router();
 
+const depoimentos = require("../models/depoimentos");
+
 routes.get("/", (req, res) => {
-  res.sendFile(path.resolve("views", "home.html"));
+  const usuario = undefined;
+  res.render("home", { titulo: "Sua empresa vai ser incrivel!", usuario });
 });
 
 routes.get("/home", (req, res) => {
@@ -25,6 +27,10 @@ routes.get("/contato", (req, res) => {
 
 routes.post("/receber-contato", (req, res) => {
   res.send("Contato recebido por:" + req.body.nome);
+});
+
+routes.get("/depoimentos", (req, res) => {
+  res.render("depoimentos", { depoimentos, titulo: "Depoimentos" });
 });
 
 module.exports = routes;

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agencia DevHouse</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/home.css">]
+    <link rel="stylesheet" href="css/home.css">
     <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet"
@@ -25,6 +25,11 @@
         <a href=""> Produtos </a>
         <a href=""> Depoimentos </a>
         <a href="/blog"> Blog </a>
+        <% if(typeof usuario !== 'undefined') { %>
+            <h6>Olá <%= usuario.nome %></h6>
+        <% } else { %>
+            <a href=""> Login </a>
+        <% } %>
       </nav>
       <div class="atendimento">
         <a href="tel:+1140028922">(11) 4002-8922</a>
@@ -32,7 +37,8 @@
       </div>
     </header>
     <section class="banner">
-      <h1>Sua empresa sem no topo!</h1>
+      <% let nome = " vinicius" %>
+      <h1><%= nome %></h1>
       <p>Podemos alavancar seu negocio</p>
       <div>
         <button class="button-padrao">Conheça Agora</button>
