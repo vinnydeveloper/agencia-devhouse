@@ -21,4 +21,11 @@ const depoimentos = [
   },
 ];
 
-module.exports = depoimentos;
+function cadastrarDepoimento(autor, titulo, descricao) {
+  return depoimentos.push({
+    autor,
+    titulo,
+    descricao,
+  });
+}
+module.exports = { depoimentos, cadastrarDepoimento };

@@ -1,21 +1,15 @@
+const { Router } = require("express");
 const express = require("express");
-const path = require("path");
+
 const routes = express.Router();
 
-const depoimentos = require("../models/depoimentos");
+const indexController = require("../controllers");
 
-routes.get("/", (req, res) => {
-  const usuario = undefined;
-  res.render("home", { titulo: "Sua empresa vai ser incrivel!", usuario });
-});
+routes.get("/", indexController.exibirHome);
 
-routes.get("/home", (req, res) => {
-  res.redirect("/");
-});
+routes.get("/home", indexController.redirectHome);
 
-routes.get("/manutencao", (req, res) => {
-  res.sendFile(path.resolve("views", "manutencao.html"));
-});
+routes.get("/manutencao", indexController.exibirManutencao);
 
 routes.get("/blog", (req, res) => {
   res.sendFile(path.resolve("views", "blog.html"));
@@ -29,8 +23,9 @@ routes.post("/receber-contato", (req, res) => {
   res.send("Contato recebido por:" + req.body.nome);
 });
 
-routes.get("/depoimentos", (req, res) => {
-  res.render("depoimentos", { depoimentos, titulo: "Depoimentos" });
-});
+routes.get("/depoimentos", indexController.exibirDepoimentos);
+
+routes.get("/cadastrar-depoimento", indexController.exibirFormDepoimento);
+routes.post("/cadastrar-depoimento", indexController.cadastrarDepoimento);
 
 module.exports = routes;
