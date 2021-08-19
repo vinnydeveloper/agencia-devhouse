@@ -91,10 +91,30 @@ header {
 
 table {
   width: 100%;
+  margin-top: 40px;
+  border-collapse: collapse;
 }
 
 table,
 th,
 td {
   border: 1px solid black;
+}
+
+.button-create {
+  background: green;
+  padding: 20px;
+  border-radius: 50px;
+  color: #fff;
+  font-family: Roboto;
+  text-decoration: none;
+}
+
+main.produtos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  max-width: 80vw;
+  margin: 0 auto;
 }

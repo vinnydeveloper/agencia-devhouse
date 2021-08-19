@@ -1,8 +1,15 @@
-const { uuid } = require("uuidv4");
+const { v4: generateId } = require("uuid");
 let listaDeProdutos = [
   {
-    id: uuid(),
+    id: generateId(),
     nome: "Site",
+    descricao: "Seu site incrivel",
+    imagem:
+      "https://cdn.w600.comps.canstockphoto.com.br/loja-site-web-produto-conceito-bot%C3%A3o-vetor-cliparte_csp52582154.jpg",
+  },
+  {
+    id: generateId(),
+    nome: "Plataforma",
     descricao: "Seu site incrivel",
     imagem:
       "https://cdn.w600.comps.canstockphoto.com.br/loja-site-web-produto-conceito-bot%C3%A3o-vetor-cliparte_csp52582154.jpg",
@@ -11,7 +18,7 @@ let listaDeProdutos = [
 
 function cadastrarProduto(nome, descricao, imagem) {
   const novoProduto = {
-    id: uuid(),
+    id: generateId(),
     nome,
     descricao,
     imagem,
