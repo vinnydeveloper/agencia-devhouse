@@ -27,7 +27,12 @@
             <td><%= produto.id %></td>
             <td><%= produto.nome %></td>
             <td>
-              <button>Excluir</button>
+              <form
+                method="POST"
+                action="/deletar-produto/<%= produto.id %>?_method=DELETE"
+              >
+                <button type="submit">Excluir</button>
+              </form>
             </td>
           </tr>
           <% }); %>
