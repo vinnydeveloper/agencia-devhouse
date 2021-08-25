@@ -10,9 +10,8 @@ const produtoController = {
   },
 
   salvarProduto: (req, res) => {
-    console.log(req.body);
     const { nome, descricao, imagem } = req.body;
-    produtoModel.cadastrarProduto(nome, descricao, imagem);
+    produtoModel.cadastrarProduto(nome, descricao, req.file.filename);
     res.redirect("/admin/produtos");
   },
 

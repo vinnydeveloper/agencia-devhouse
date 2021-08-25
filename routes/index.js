@@ -28,6 +28,5 @@ routes.get("/depoimentos", indexController.exibirDepoimentos);
 routes.get("/cadastrar-depoimento", indexController.exibirFormDepoimento);
 
 routes.post("/cadastrar-depoimento", indexController.cadastrarDepoimento);
-routes.post("/admin/deletar-produto", indexController.cadastrarDepoimento);
 
 module.exports = routes;

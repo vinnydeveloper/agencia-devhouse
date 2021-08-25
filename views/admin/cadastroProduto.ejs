@@ -10,13 +10,17 @@
   <body>
     <%- include('../components/header') %>
     <main>
-      <form action="/salvar-produto" method="POST">
+      <form
+        action="/salvar-produto"
+        enctype="multipart/form-data"
+        method="POST"
+      >
         <label>Nome do produto</label>
         <input type="text" name="nome" />
         <label>Descrição do produto</label>
         <input type="text" name="descricao" />
-        <label>Link da Imagem do produto</label>
-        <input type="text" name="imagem" />
+        <label>Imagem do produto</label>
+        <input type="file" name="imagem" />
         <button type="submit">Finalizar o cadastro</button>
       </form>
     </main>

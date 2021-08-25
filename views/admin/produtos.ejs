@@ -18,6 +18,7 @@
           <tr>
             <th>id</th>
             <th>nome</th>
+            <th>imagem</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -26,6 +27,9 @@
           <tr>
             <td><%= produto.id %></td>
             <td><%= produto.nome %></td>
+            <td>
+              <img src="/uploads/<%= produto.imagem %>" />
+            </td>
             <td>
               <form
                 method="POST"
