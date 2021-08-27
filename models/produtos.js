@@ -1,22 +1,11 @@
 const { v4: generateId } = require("uuid");
+const fs = require("fs");
+const path = require("path");
+
+const produtoJson = require("../databases/produtos.json");
 
 const produtoModel = {
-  listaDeProdutos: [
-    {
-      id: generateId(),
-      nome: "Site",
-      descricao: "Seu site incrivel",
-      imagem:
-        "https://cdn.w600.comps.canstockphoto.com.br/loja-site-web-produto-conceito-bot%C3%A3o-vetor-cliparte_csp52582154.jpg",
-    },
-    {
-      id: generateId(),
-      nome: "Plataforma",
-      descricao: "Seu site incrivel",
-      imagem:
-        "https://cdn.w600.comps.canstockphoto.com.br/loja-site-web-produto-conceito-bot%C3%A3o-vetor-cliparte_csp52582154.jpg",
-    },
-  ],
+  listaDeProdutos: produtoJson,
   cadastrarProduto: function (nome, descricao, imagem) {
     const novoProduto = {
       id: generateId(),
@@ -25,7 +14,12 @@ const produtoModel = {
       imagem,
     };
 
-    return this.listaDeProdutos.push(novoProduto);
+    this.listaDeProdutos.push(novoProduto);
+
+    this.atualizaJson();
+    //produtoModel.atualizaJson
+
+    return;
   },
   excluirProduto: function (id) {
     console.log(id);
@@ -37,7 +31,13 @@ const produtoModel = {
 
     this.listaDeProdutos = novaListaDeProdutos;
 
+    this.atualizaJson();
     return true;
+  },
+
+  atualizaJson() {
+    const listaEmJson = JSON.stringify(this.listaDeProdutos);
+    fs.writeFileSync(path.resolve("databases", "produtos.json"), listaEmJson);
   },
 };
 
