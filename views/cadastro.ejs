@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+    <title>Depoimentos</title>
+  </head>
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <form>
+        <label>Nome Completo</label>
+        <input type="text" />
+        <label>Email</label>
+        <input type="email" />
+        <label>Senha</label>
+        <input type="password" />
+        <button type="submit">Enviar</button>
+        <small
+          >Já tem um cadastro?
+          <a href="/login">Clique aqui e faça login</a></small
+        >
+      </form>
+    </main>
+  </body>
+</html>

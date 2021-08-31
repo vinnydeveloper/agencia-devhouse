@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const rotasDeProdutos = require("./routes/produtos");
+const rotasDeUsuarios = require("./routes/usuarios");
 const rotas = require("./routes");
 
 const { append } = require("vary");
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 app.use(rotasDeProdutos);
+app.use(rotasDeUsuarios);
 
 app.use(rotas);
 
