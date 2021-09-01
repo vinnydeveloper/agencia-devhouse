@@ -40,6 +40,7 @@ const usuarioModel = {
     this.listaDeUsuarios = novaListaDeUsuarios;
 
     this.atualizaJson();
+    //usuarioModel.atualizarJson()
     return true;
   },
 

@@ -11,13 +11,13 @@
   <body>
     <%- include('components/header') %>
     <main>
-      <form>
+      <form action="/salvarUsuario" method="POST">
         <label>Nome Completo</label>
-        <input type="text" />
+        <input type="text" name="nome" />
         <label>Email</label>
-        <input type="email" />
+        <input type="email" name="email" />
         <label>Senha</label>
-        <input type="password" />
+        <input type="password" name="senha" />
         <button type="submit">Enviar</button>
         <small
           >Já tem um cadastro?

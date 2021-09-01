@@ -4,5 +4,11 @@
     "nome": "vinny",
     "email": "vinny@email",
     "senha": "1234"
+  },
+  {
+    "id": "142add84-e85d-4965-91cc-8d977027b5dc",
+    "nome": "Mario Luz",
+    "email": "mario@email.com",
+    "senha": "1234"
   }
 ]
