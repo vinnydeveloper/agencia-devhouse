@@ -15,6 +15,20 @@ const usuarioController = {
 
     return res.redirect("/login");
   },
+
+  fazerLogin(req, res) {
+    const { email, senha } = req.body;
+
+    const usuarioSalvo = usuarioModel.buscarUsuarioPorEmail(email);
+
+    if (!usuarioSalvo || usuarioSalvo.senha != senha) {
+      res.render("login", {
+        error: "Usuario não existe ou a senha está errada!",
+      });
+    }
+
+    return res.redirect("/admin/produtos");
+  },
 };
 
 module.exports = usuarioController;

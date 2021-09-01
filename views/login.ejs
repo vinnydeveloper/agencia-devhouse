@@ -11,11 +11,14 @@
   <body>
     <%- include('components/header') %>
     <main>
-      <form>
+      <% if(typeof error !== 'undefined'){ %>
+      <h1><%= error %></h1>
+      <% } %>
+      <form action="/fazerLogin" method="POST">
         <label>Email</label>
-        <input type="email" />
+        <input type="email" name="email" />
         <label>Senha</label>
-        <input type="password" />
+        <input type="password" name="senha" />
         <button type="submit">Enviar</button>
         <small>Não tem cadastro? <a href="/cadastro">Clique aqui</a></small>
       </form>
