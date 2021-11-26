@@ -23,7 +23,7 @@ app.use(rotasDeUsuarios);
 
 app.use(rotas);
 
-app.listen(3000);
+app.listen(process.env.PORT || 80);
 
 // tem criar o arquivo home em HTML que contenha um titulo e um paragrafo
 // esse arquivo vai ser exibido tanto na rota / quanto na rota /home
